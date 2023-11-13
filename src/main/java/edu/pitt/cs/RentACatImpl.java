@@ -48,8 +48,29 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public String listCats() {
+<<<<<<< Updated upstream
 		// TODO
-		return "WRITE CODE FOR THIS";
+		return "A String";
+=======
+		
+		String list = "";
+
+		if (cats == null || cats.size() == 0) {
+			return list;
+		}
+
+		// Loop through every cat in the cat list
+		for (Cat c : cats) {
+			// If we found a cat whose id matches the id
+			// of the argument, then we have a match and
+			// can thus return a reference to that cat
+
+			if (c != null) {
+				list += "ID " + c.getId() + ". " + c.getName() + "\n";
+			}
+		}
+		return list;
+>>>>>>> Stashed changes
 	}
 
 	/**
@@ -62,8 +83,7 @@ public class RentACatImpl implements RentACat {
 	 */
 
 	public boolean catExists(int id) {
-		// TODO
-		return false;
+		return (this.getCat(id) != null);
 	}
 
 	/**
